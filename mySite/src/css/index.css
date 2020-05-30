@@ -1,0 +1,10 @@
+@font-face {
+	font-family: graff;
+	src: url('../fonts/RobinGraffitiFilledin.ttf');
+}
+.title{
+    font-family: graff;
+}
+::-webkit-scrollbar {
+	display: none;
+}
