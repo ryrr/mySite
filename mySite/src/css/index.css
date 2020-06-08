@@ -3,8 +3,34 @@
 	src: url('../fonts/RobinGraffitiFilledin.ttf');
 }
 .title{
-    font-family: graff;
+    letter-spacing: 20px;
+    opacity: 0.5;
+    font-size: 50pt;
+    font-family: 'graff';
+    text-align: center;
+    padding: 0px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+.weblink{
+    margin-left: 20px;
+    color:rgb( 167, 153, 149)
+}
+.gitlink{
+    color:rgb( 167, 153, 149)
+}
+body{
+    background-color: rgb( 167, 153, 149);
 }
 ::-webkit-scrollbar {
-	display: none;
+    display: none;
+}
+
+@media (max-width: 600px){
+    .title{
+        margin-top: 20px;
+        margin-left: 20px;
+        margin-bottom: 0px;
+        font-size: 40pt;
+    }
 }
