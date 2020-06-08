@@ -10,11 +10,14 @@ let Body = (props) => {
             alignItems: 'center',
         },
         home: {
+            
+        },
+        hometext:{
+            opacity: '0.5',
             textAlign: 'center',
             fontFamily: 'helvetica',
             fontWeight: 'bold',
             fontSize: '13pt',
-            opacity: '0.5',
             color: props.color
         },
         starCol: {
@@ -27,51 +30,84 @@ let Body = (props) => {
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'center',
-            alignItems: 'center',
+            alignItems: 'center',        
+        },
+        starItem:{
+            backgroundColor:'rgb(0,0,0,0.5)',
+            borderRadius:'10px',
+            fontFamily: 'helvetica',
+            color: 'rgb(167, 153, 149)',
+            display:'flex',
+            flexDirection:'column',
+            justifyContent:'center',
+            alignItems:'center'
+        },
+        starDesc:{
+            width:'90%',
+        },
+        starTitle:{
+            fontFamily: 'Source Code Pro',
+            textAlign:'left',
+            fontSize:'25pt',
+            margin:'0px'
+
+        },
+        starSecDesc:{
+            textAlign:"left",
+            marginLeft:'20px'
+
         },
         starImg: {
-            height: '250px',
+            height: '150px',
             margin: '10px',
-            cursor: 'pointer'
+            cursor: 'pointer',
+            borderRadius:'10px'
         }
     })
 
     if (props.section === 'home') {
         return (
             <div className={css(styles.home)}>
-                <p>
-                    Hi I'm Ryan, an aspiring web-developer from NYC.
-                    Welcome to my website
+                <p className={css(styles.hometext)}>
+                    Hi I'm Ryan, Welcome to my website
 				</p>
             </div>
         )
     }
     else if (props.section === 'work') {
-        let proj = {
+        let tonightsTunes = {
             name: 'tonightsTunes',
             desc: 'Generate a playlist featuring music from nearby artists',
             link: 'http://tonightstunes.xyz',
             github: 'http://github.com/RiPRR/tonightstunes'
         }
+        let citiBiker = {
+            name: 'citiBiker',
+            desc: "a deeper look into NYC's CitiBike system",
+            link: '',
+            github: 'https://github.com/RiPRR/citiBiker'
+        }
         return (
             <div className={css(styles.work)}>
-                <Project info={proj}></Project>
-                <Project info={proj}></Project>
-                <Project info={proj}></Project>
-                <Project info={proj}></Project>
+                <Project info={tonightsTunes}></Project>
+                <Project info={citiBiker}></Project>
             </div>
         )
     }
     else {
         return (
-            <div className={css(styles.starRow)}>
-                <div className={css(styles.starCol)}>
+            <div className={css(styles.starItem)}>
+                <div className={css(styles.starRow)}>
                     <img src='https://pbs.twimg.com/media/EZN58KPU4AAD0Dg?format=jpg&name=medium' className={css(styles.starImg)}></img>
                     <img src='https://pbs.twimg.com/media/EZOsTipVcAAOoJ4?format=jpg&name=medium' className={css(styles.starImg)}></img>
-                </div>
-                <div className={css(styles.starCol)}>
                     <img src='https://pbs.twimg.com/media/EZNwgc0UwAAo6uQ?format=jpg&name=medium' className={css(styles.starImg)}></img>
                     <img src='https://pbs.twimg.com/media/EZBBl34XYAEwHU_?format=jpg&name=medium' className={css(styles.starImg)}></img>
+                </div>
+                <div className={css(styles.starDesc)}>
+                    <h2 className={css(styles.starTitle)}>NOISE</h2>
+                    <p className={css(styles.starSecDesc)}>
+                        some cool AI generated art created using the wonderful py-noisemaker library by @aayars
+                    </p>
                 </div>
             </div>
         )
