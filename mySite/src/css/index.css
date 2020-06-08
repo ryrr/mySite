@@ -19,8 +19,14 @@
 .gitlink{
     color:rgb( 167, 153, 149)
 }
+.links{
+    font-family: helvetica;
+    color:rgb( 167, 153, 149);
+    text-decoration: underline;
+    margin:10px ;
+}
 body{
-    background-color: rgb( 167, 153, 149);
+    background-color: rgb(203, 184, 169);
 }
 ::-webkit-scrollbar {
     display: none;

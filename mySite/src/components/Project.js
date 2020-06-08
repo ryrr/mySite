@@ -10,7 +10,7 @@ let Project = (props) => {
             flexDirection: 'row',
             width: '100%',
             maxWidth:'500px',
-            backgroundColor: 'black',
+            backgroundColor: props.color,
             opacity: '0.5',
             marginBottom: '30px',
             justifyContent: 'center',
@@ -42,15 +42,18 @@ let Project = (props) => {
         },
         projInfo: {
             width: '100%',
-            marginRight: '10px',
-            marginLeft: '10px',
+            marginRight: '20px',
+            marginLeft: '5px',
             color: 'rgb(167, 153, 149)',
             fontFamily: 'helvetica',
-            textAlign: 'left'
+            textAlign: 'left',
         },
         projLinks: {
             paddingTop: '3px',
-        }
+        },
+        projectDesc:{
+         
+        },
 
     })
     return (
