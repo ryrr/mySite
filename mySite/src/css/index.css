@@ -21,12 +21,12 @@
 }
 .links{
     font-family: helvetica;
-    color:rgb( 167, 153, 149);
+    color:black;
     text-decoration: underline;
     margin:10px ;
 }
 body{
-    background-color: rgb(203, 184, 169);
+    background-color: #545677;
 }
 ::-webkit-scrollbar {
     display: none;
