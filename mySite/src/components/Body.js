@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, css } from 'aphrodite';
 import Project from './Project.js'
+import whipVid from 'url:../media/whiprecording.mp4'
+import Noise from './Noise.js';
+import Color from './Color.js';
 let Body = (props) => {
     const styles = StyleSheet.create({
         work: {
@@ -8,9 +11,10 @@ let Body = (props) => {
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
-        },
-        home: {
-            
+            width:'70%',
+            "@media (max-width: 600px)": {
+                width:'90%'   
+            }
         },
         hometext:{
             textAlign: 'center',
@@ -28,9 +32,12 @@ let Body = (props) => {
         },
         starCol: {
             display: 'flex',
-            flexDirection: 'column',
+            flexDirection: 'row',
             justifyContent: 'center',
             alignItems: 'center',
+            "@media (max-width: 600px)": {
+                flexDirection: 'column',
+            }
         },
         starRow: {
             display: 'flex',
@@ -42,46 +49,6 @@ let Body = (props) => {
             borderTopRightRadius:'10px',  
             width:'100%'
         },
-        starItem:{
-            borderRadius:'10px',
-            fontFamily: 'helvetica',
-            color: 'rgb(167, 153, 149)',
-            display:'flex',
-            flexDirection:'column',
-            justifyContent:'center',
-            alignItems:'center',
-        },
-        starDesc:{
-            backgroundColor:props.color,
-            opacity:'0.5',
-            borderBottomLeftRadius:'10px',
-            borderBottomRightRadius:'10px',
-            width:'100%'
-        },
-        starTitle:{
-            fontFamily: 'Source Code Pro',
-            textAlign:'left',
-            fontSize:'25pt',
-            margin:'0px',
-            width:'80%',
-            marginLeft:'15px'
-
-        },
-        starSecDesc:{
-            textAlign:"left",
-            marginLeft:'30px',
-            width:'100%'
-        },
-        starImg: {
-            height: '150px',
-            margin: '10px',
-            cursor: 'pointer',
-            borderRadius:'10px'
-        },
-        red:{
-            color:'red',
-            textDecoration:'underline'
-        }
     })
      //**********************HOME
     if (props.section === 'home') {
@@ -116,7 +83,7 @@ let Body = (props) => {
         }
         return (
             <div className={css(styles.work)}>
-                <Project color={props.color} info={tonightsTunes}></Project>
+                <Project src={whipVid} color={props.color} info={tonightsTunes}></Project>        
                 <Project color={props.color} info={citiBiker}></Project>
             </div>
         )
@@ -125,19 +92,9 @@ let Body = (props) => {
     //**********************STAR
     else {
         return (
-            <div className={css(styles.starItem)}>
-                <div className={css(styles.starRow)}>
-                    <img src='https://pbs.twimg.com/media/EZN58KPU4AAD0Dg?format=jpg&name=medium' className={css(styles.starImg)}></img>
-                    <img src='https://pbs.twimg.com/media/EZOsTipVcAAOoJ4?format=jpg&name=medium' className={css(styles.starImg)}></img>
-                    <img src='https://pbs.twimg.com/media/EZNwgc0UwAAo6uQ?format=jpg&name=medium' className={css(styles.starImg)}></img>
-                    <img src='https://pbs.twimg.com/media/EZBBl34XYAEwHU_?format=jpg&name=medium' className={css(styles.starImg)}></img>
-                </div>
-                <div className={css(styles.starDesc)}>
-                    <h2 className={css(styles.starTitle)}>NOISE</h2>
-                    <p className={css(styles.starSecDesc)}>
-                        some cool AI generated art created using the <a href='https://github.com/aayars/py-noisemaker' className={css(styles.red)}>py-noisemaker</a> library by @aayars
-                    </p>
-                </div>
+            <div className={css(styles.star)}>
+                <Noise color={props.color}></Noise>
+                <Color color={props.color}></Color>
             </div>
         )
     }

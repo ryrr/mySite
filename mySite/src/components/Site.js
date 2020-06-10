@@ -34,7 +34,8 @@ let Site = (props) => {
             color: color,
             '@media (max-width: 600px)': {
                 width: '70%',
-                fontSize: '15pt'
+                fontSize: '15pt',
+                marginBottom: '0px',
             }
         },
         img: {

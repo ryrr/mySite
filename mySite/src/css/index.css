@@ -26,7 +26,7 @@
     margin:10px ;
 }
 body{
-    background-color: #545677;
+    background-color: #DEE2FF;
 }
 ::-webkit-scrollbar {
     display: none;
@@ -34,7 +34,7 @@ body{
 
 @media (max-width: 600px){
     .title{
-        margin-top: 20px;
+        margin-top: 10px;
         margin-left: 20px;
         margin-bottom: 0px;
         font-size: 40pt;
