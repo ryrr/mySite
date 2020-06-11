@@ -1,21 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, css } from 'aphrodite';
 import Project from './Project.js'
-import whipVid from 'url:../media/whiprecording.mp4'
 import Noise from './Noise.js';
 import Color from './Color.js';
+import whipVid from 'url:../media/whiprecording.mp4'
+
 let Body = (props) => {
     const styles = StyleSheet.create({
-        work: {
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            width:'70%',
-            "@media (max-width: 600px)": {
-                width:'90%'   
-            }
-        },
         hometext:{
             textAlign: 'center',
             fontFamily: 'helvetica',
@@ -30,24 +21,21 @@ let Body = (props) => {
             color:props.color,
             opacity:'0.5'
         },
-        starCol: {
+        star:{
+            display:'flex',
+            flexDirection:'column',
+            justifyContent:'center',
+            alignItems:'center'
+        },
+        work: {
             display: 'flex',
-            flexDirection: 'row',
+            flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
+            width:'70%',
             "@media (max-width: 600px)": {
-                flexDirection: 'column',
+                width:'90%'   
             }
-        },
-        starRow: {
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'center',
-            alignItems: 'center',  
-            backgroundColor:'rgb(0,0,0,0.5)',    
-            borderTopLeftRadius:'10px',
-            borderTopRightRadius:'10px',  
-            width:'100%'
         },
     })
      //**********************HOME
@@ -93,8 +81,8 @@ let Body = (props) => {
     else {
         return (
             <div className={css(styles.star)}>
+                <Color setColor={props.setColor}color={props.color}></Color>
                 <Noise color={props.color}></Noise>
-                <Color color={props.color}></Color>
             </div>
         )
     }

@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, css } from 'aphrodite';
 import '../css/index.css';
 import Body from './Body.js'
+import {Helmet} from "react-helmet";
 let Site = (props) => {
     let [section, setSection] = useState('home')
     let [color, setColor] = useState('black')
+    let [bgColor, setBgColor] = useState('#DEE2FF')
     const styles = StyleSheet.create({
         all: {
             display: 'flex',
@@ -52,6 +54,11 @@ let Site = (props) => {
     })
     return (
         <div className={css(styles.all)}>
+            <Helmet>
+                <style>
+                    {`body { background-color:${bgColor};}`}
+                </style>
+            </Helmet>
             <div className={css(styles.heading)}>
                 <div className={css(styles.titleDiv)}>
                     <h1 class='title'>ryan rivera</h1>
@@ -62,7 +69,7 @@ let Site = (props) => {
                     <h2 onClick={() => { setSection('work') }} className={section === 'work' ? css(styles.selected) : css(styles.tab)}>work</h2>
                 </div>
             </div>
-            <Body section={section} color={color}></Body>
+            <Body setColor={setBgColor} section={section} color={color}></Body>
         </div>
     )
 }

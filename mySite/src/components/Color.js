@@ -12,6 +12,8 @@ let Color = (props) => {
             flexDirection:'column',
             justifyContent:'center',
             alignItems:'center',
+            marginBottom:'30px',
+            width:'80%',
             "@media (max-width: 600px)": {
                 width:'90%'
             }
@@ -23,7 +25,7 @@ let Color = (props) => {
             margin:'5px',
             borderRadius:'10px',
             fontSize:'30pt',
-            width:'30%',
+            width:'40%',
             color:props.color,
             outline:'none',
             opacity:'0.5'
@@ -47,15 +49,21 @@ let Color = (props) => {
             width:'80%',
         },
     })
+    let colorSwap = (e)=>{
+        e.preventDefault()
+        props.setColor(e.target[0].value)
+    }
     return(
         <div className={css(styles.container)}>
             <div className={css(styles.top)}>
-                <input placeholder='#' className={css(styles.hexInput)}></input>
+                <form onSubmit={(e)=>{colorSwap(e)}}>
+                    <input className={css(styles.hexInput)}></input>
+                </form>
             </div>
             <div className={css(styles.bottom)}>
                 <h2 className={css(styles.title)}>COLOR</h2>
                 <p className={css(styles.desc)}>
-                    enter a hex code 😳
+                    try a color or hex code! (red, saddlebrown, #A9B4C2.....)
                 </p>
             </div>
         </div>

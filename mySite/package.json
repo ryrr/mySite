@@ -13,7 +13,8 @@
     "libxmljs": "^0.19.7",
     "node-gyp": "^5.1.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-helmet": "^6.1.0"
   },
   "devDependencies": {
     "babel-preset-nano-react-app": "^0.1.0",

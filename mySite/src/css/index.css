@@ -25,9 +25,6 @@
     text-decoration: underline;
     margin:10px ;
 }
-body{
-    background-color: #DEE2FF;
-}
 ::-webkit-scrollbar {
     display: none;
 }
